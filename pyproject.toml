@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "retry"
+version = "1.0.0"
+description = "A generic retry package for Python"
+authors = [
+    { name = "Talaat Magdy", email = "talaatmagdy75@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pytest",
+    "pytest-asyncio",
+]
+requires-python = ">=3.6"
+
+[tool.setuptools.packages.find]
+where = ["."]
