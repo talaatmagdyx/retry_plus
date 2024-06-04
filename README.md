@@ -22,7 +22,7 @@ pip install retry_plus
 
 ## Usage
 
-For detailed usage and examples, refer to the [Conditions Documentation](https://github.com/talaatmagdyx/retry-plus/blob/main/CONDITIONS.md).
+For detailed usage and examples, refer to the [Conditions Documentation](https://github.com/talaatmagdyx/retry_plus/blob/main/CONDITIONS.md).
 
 ### Synchronous Function
 
@@ -192,7 +192,7 @@ We welcome contributions to improve the retry package. Here are some ways you ca
 1. **Fork the repository**: Click the "Fork" button on the GitHub repository page.
 2. **Clone your fork**: Clone your fork to your local machine.
    ```bash
-   git clone https://github.com/talaatmagdyx/retry-plus.git
+   git clone https://github.com/talaatmagdyx/retry_plus.git
    ```
 3. **Create a branch**: Create a new branch for your changes.
    ```bash

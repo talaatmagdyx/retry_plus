@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name='retry_plus',
-    version='1.0.1',
+    version='1.0.3',
     description='A generic retry package for Python',
     long_description=long_description,
     long_description_content_type='text/markdown',
