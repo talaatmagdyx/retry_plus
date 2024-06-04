@@ -1,12 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='retry',
+    name='retry_plus',
     version='1.0.0',
     description='A generic retry package for Python',
     author='Talaat Magdy',
     author_email='talaatmagdy75@gmail.com',
     packages=find_packages(),
+    license="MIT",
     install_requires=[
         'pytest',
         'pytest-asyncio',

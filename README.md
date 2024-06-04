@@ -17,7 +17,7 @@ A generic retry package for Python.
 ## Installation
 
 ```bash
-pip install retry
+pip install retry_plus
 ```
 
 ## Usage
