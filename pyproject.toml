@@ -4,8 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "retry_plus"
-version = "1.0.0"
+version = "1.0.1"
 description = "A generic retry package for Python"
+readme = "README.md"
 authors = [
     { name = "Talaat Magdy", email = "talaatmagdy75@gmail.com" }
 ]
