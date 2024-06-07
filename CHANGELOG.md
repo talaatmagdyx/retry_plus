@@ -10,3 +10,7 @@
 - Context manager support.
 - Logging and custom callbacks before/after retries and before sleep.
 - Retry statistics and dynamic arguments at runtime.
+## [1.0.4] - 2024-06-07
+- default_stop_condition stops retrying after 3 attempts.
+- default_wait_condition waits 1 second between attempts.
+- If no stop_condition or wait_condition is provided, the defaults will be used.

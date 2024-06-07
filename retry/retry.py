@@ -25,8 +25,8 @@ class Retry:
     Retry decorator and context manager to retry operations based on specified conditions.
 
     Args:
-        stop_condition: Callable that determines when to stop retrying.
-        wait_condition: Callable that determines how long to wait between attempts.
+        stop_condition: Callable that determines when to stop retrying. Default stop condition: stops after 3 attempts.
+        wait_condition: Callable that determines how long to wait between attempts. Default wait condition: waits 1 second between attempts.
         retry_on_exceptions: Tuple of exception types that trigger a retry.
         retry_on_result: Callable that determines if the result should trigger a retry.
         before: Callable executed before each attempt.
@@ -36,22 +36,30 @@ class Retry:
     """
 
     def __init__(self,
-                 stop_condition: Callable[[int, Optional[Exception], Optional[Any]], bool],
-                 wait_condition: Callable[[int], float],
+                 stop_condition: Callable[[int, Optional[Exception], Optional[Any]], bool] = None,
+                 wait_condition: Callable[[int], float] = None,
                  retry_on_exceptions: Tuple[Type[Exception], ...] = (Exception,),
                  retry_on_result: Optional[Callable[[Any], bool]] = None,
                  before: Optional[Callable] = None,
                  after: Optional[Callable] = None,
                  before_sleep: Optional[Callable] = None,
                  reraise: bool = False):
-        self.stop_condition = stop_condition  # Storing the stop condition function
-        self.wait_condition = wait_condition  # Storing the wait condition function
+        self.stop_condition = stop_condition if stop_condition is not None else self.default_stop_condition
+        self.wait_condition = wait_condition if wait_condition is not None else self.default_wait_condition
         self.retry_on_exceptions = retry_on_exceptions  # Storing the exceptions that trigger a retry
         self.retry_on_result = retry_on_result  # Storing the result-based retry condition
         self.before = before  # Storing the before attempt callback
         self.after = after  # Storing the after attempt callback
         self.before_sleep = before_sleep  # Storing the before sleep callback
         self.reraise = reraise  # Storing the reraise flag
+
+    def default_stop_condition(self, attempt: int, exception: Optional[Exception], result: Optional[Any]) -> bool:
+        """Default stop condition: stops after 3 attempts."""
+        return attempt >= 3
+
+    def default_wait_condition(self, attempt: int) -> float:
+        """Default wait condition: waits 1 second between attempts."""
+        return 1.0
 
     def __call__(self, func: Callable):
         """

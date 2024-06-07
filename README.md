@@ -160,7 +160,28 @@ except Exception as e:
     print(f"Failed to fetch data after retries. Error: {e}")
 
 ```
+## Default Conditions
+If `stop_condition` and `wait_condition` are not provided, the following defaults will be used:
 
+- Stop Condition: Stops after 3 attempts.
+- Wait Condition: Waits 1 second between attempts.
+```python
+from retry import Retry
+import time
+
+@Retry()
+def default_unreliable_function():
+    print("Trying to perform an unreliable operation.")
+    if time.time() % 2 < 1:
+        raise ValueError("Simulated transient error.")
+    return "Success"
+
+try:
+    result = default_unreliable_function()
+    print(f"Function succeeded with result: {result}")
+except Exception as e:
+    print(f"Function failed after retries with exception: {e}")
+```
 
 ## Tests
 
