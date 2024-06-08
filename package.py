@@ -29,7 +29,7 @@ def create_project_structure(project_name):
         with open(file, 'w') as f:
             pass  # Just create an empty file
 
-    # Add some basic content to the setup.py and README.md
+    # Add some basic content to the setup.py and README.rst
     setup_content = f"""from setuptools import setup, find_packages
 
 setup(
