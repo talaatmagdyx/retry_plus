@@ -3,27 +3,23 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
 project = 'retry_plus'
 copyright = '2024, talaatmagdyx'
 author = 'talaatmagdyx'
 release = '1.0.4'
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
 extensions = [
-    'sphinx.ext.autodoc',            # Automatically document from docstrings
-    'sphinx.ext.napoleon',           # Support for NumPy and Google style docstrings
-    'sphinx.ext.viewcode',           # Add links to highlighted source code
-    'sphinx.ext.todo',               # Support for todo items
-    'sphinx.ext.coverage',           # Collect doc coverage stats
-    'sphinx.ext.intersphinx',        # Link to other projects’ documentation
-    'myst_parser',                   # Parse Markdown files
-    'sphinx.ext.autosummary',        # Generate summary documentation
-    'sphinx.ext.githubpages',        # Publish on GitHub Pages
-    'sphinx.ext.extlinks',           # Create shortcuts for external links
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode',
+    'sphinx.ext.todo',
+    'sphinx.ext.coverage',
+    'sphinx.ext.intersphinx',
+    'myst_parser',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.extlinks',
 ]
 
 # Configuration for the MyST parser to enable Markdown support
@@ -58,8 +54,6 @@ html_static_path = ['_static']
 exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
 html_theme = 'alabaster'
 
 # -- Options for Autodoc -----------------------------------------------------
