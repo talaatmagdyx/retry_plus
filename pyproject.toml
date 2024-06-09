@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "retry_plus"
-version = "1.0.4"
+version = "1.0.5"
 description = "A generic retry package for Python"
 readme = "README.md"
 authors = [
@@ -16,11 +16,20 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = [
-    "pytest",
-    "pytest-asyncio",
-]
+dependencies = []
 requires-python = ">=3.6"
 
 [tool.setuptools.packages.find]
 where = ["."]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio"
+]
+docs = [
+    "sphinx",
+    "myst-parser",
+    "readthedocs-sphinx-ext",
+    "sphinx_rtd_theme"
+]

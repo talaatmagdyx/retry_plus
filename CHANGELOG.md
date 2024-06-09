@@ -14,3 +14,5 @@
 - default_stop_condition stops retrying after 3 attempts.
 - default_wait_condition waits 1 second between attempts.
 - If no stop_condition or wait_condition is provided, the defaults will be used.
+## [1.0.5] - 2024-06-09
+- reduce required installation package
