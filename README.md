@@ -1,6 +1,8 @@
-# Retry Package
+# Retry Package [![Socket Badge](https://socket.dev/api/badge/pypi/package/retry-plus)](https://socket.dev/pypi/package/retry-plus/overview/1.0.5) [![PyPI version](https://img.shields.io/pypi/v/retry-plus.svg)](https://pypi.org/project/retry-plus/)
+
 
 A generic retry package for Python.
+
 
 ## Features
 
